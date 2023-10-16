@@ -15,6 +15,7 @@ body {
         padding: 20px;
         border-radius: 10px;
     }
+
     .header img {
         width: 500px;
         height: 80px;
@@ -151,3 +152,26 @@ body {
         padding: 10px;
         position: sticky;;
     }
+
+    .unsere-werte img{
+
+        width: 300px;
+        height: auto;
+    }
+
+    .about-us-section {
+        display: flex;
+        flex-direction: column;
+        align-items: left;/* Center horizontally */
+    }
+    
+    .unsere-werte {
+        display:flex;
+        align-items: center;
+        margin-bottom: 30px; /* Add some spacing between team members */
+    }
+    
+    #image-on-right {
+        flex-direction: row-reverse; /* Move the second image to the right */
+    }
+    

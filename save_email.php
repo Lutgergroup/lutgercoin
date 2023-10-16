@@ -17,11 +17,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         fclose($handle);
 
         // Provide a response
-        echo "Email saved successfully.";
+        header("Location: ./");
     } else {
-        echo "Email is empty.";
+        header("Location: ./");
     }
 } else {
-    echo "Invalid request.";
+    header("Location: ./");
 }
 ?>

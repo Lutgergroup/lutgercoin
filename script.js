@@ -23,3 +23,28 @@ function showSignupForm() {
         playerCard.style.display = "block"; // Show the player card
     }
 }
+
+let playerCardsVisible = true; // Track the visibility state of player cards
+
+function togglePlayerCards() {
+    var downloadCard = document.getElementById('download-card');
+    var aboutUsCard = document.getElementById('about-us-card');
+    var signupCard = document.getElementById('signup-card');
+
+    if (playerCardsVisible) {
+        downloadCard.style.display = 'none';
+        aboutUsCard.style.display = 'none';
+        signupCard.style.display = 'block';
+    } else {
+        downloadCard.style.display = 'block';
+        aboutUsCard.style.display = 'block';
+        signupCard.style.display = 'block';
+    }
+
+    playerCardsVisible = !playerCardsVisible; // Toggle the visibility state
+}
+
+
+function goBack() {
+    window.history.back(); // Dieser Befehl lässt den Benutzer zur vorherigen Seite zurücknavigieren
+}

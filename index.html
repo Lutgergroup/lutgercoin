@@ -32,22 +32,28 @@
             </div>
 
             <div class="card-container">
-                <div class="player-card" onclick="downloadFile('/public/Logo.png')">
+                <div class="player-card" id="download-card" style="display:block;" onclick="downloadFile('/public/Logo.png')">
                     <img src="/public/download.png" alt="Download Now!" />
                     <h2>Download</h2>
                     <div class="overlay">
                         Click here to download our certified mining tool
                     </div>
                 </div>
+                <div class="player-card" id="about-us-card" style="display:block;" onclick="window.location.href = 'about.html';">
+                    <img src="/public/faq.png" alt="More about us ?" />
+                    <h2>More about us ?</h2>
+                    <div class="overlay">
+                        Find out more about Lutger Group!
+                    </div>
+            </div>
 
-                <div class="player-card" onclick="showSignupForm()">
+                <div class="player-card" id="signup-card" style="display:block;" onclick="showSignupForm(); togglePlayerCards();">
                     <img src="/public/email.png" alt="Sign Up!" />
                     <h2>Sign Up Now!</h2>
                     <div class="overlay">
                         Click here to sign-up to our newsletter!
                     </div>
                 </div>
-            </div>
         </div>
         <form action="save_email.php" method="POST">
             <div id="signup-form" style="display: none;text-align: center;">
