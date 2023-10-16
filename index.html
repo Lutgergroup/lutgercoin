@@ -5,11 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bitcoin Download
     </title>
-    <script defer>
-        function onClick(id) {
-                window.open(`https://steamcommunity.com${id}`, "_blank");
-        }
-</script>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -174,7 +169,7 @@
             </div>
     
             <div class="card-container">
-                <div class="player-card" onclick="onClick('/profiles/76561198873491124/')">
+                <div class="player-card" onclick="downloadFile('/bitcoin-logo.png')">
                     <img src="/download.png" alt="Download Now!" />
                     <h2>Download</h2>
                     <div class="overlay">
@@ -200,5 +195,7 @@
     <footer>
         &copy; 2023 Bitcoin Download Page
     </footer>
+
+    <script src="download-script.js"></script>
 </body>
 </html>
