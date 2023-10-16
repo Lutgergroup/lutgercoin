@@ -15,11 +15,17 @@ header {
     padding: 20px;
     border-radius: 10px;
 }
+.header img {
+    width: 500px;
+    height: 80px;
+    border-radius: 50%;
+}
+
 
 main {
     flex: 1;
     background-color: #1d1d1d;
-    padding: 10px;
+    padding: 3px;
     margin: 5px;
     border-radius: 10px;
     box-shadow: 0 0 30px rgba(255, 134, 20, 0.2);
@@ -45,12 +51,13 @@ label {
 }
 
 input[type="email"] {
-    width: 85%;
+    width: 100%;
     padding: 10px;
-    margin-bottom: 10px;
+    margin-bottom: 20px;
     border: 2px solid #727272;
     border-radius: 5px;
     height: 2vh;
+    align-items: center;
 }
 
 button {
