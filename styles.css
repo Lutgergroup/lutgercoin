@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 body {
     font-family: Arial, sans-serif;
     background-color: #000000;
@@ -149,4 +150,111 @@ footer {
     color: #fff;
     text-align: center;
     padding: 10px;
+=======
+body,
+html {
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        height: 100%;
+        background-image: url("/public/sus.webp");
+        background-size: cover;
+        background-position: center;
+        font-family: Arial, sans-serif;
+}
+
+.main-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100vh; /* makes it fill the entire viewport height */
+        overflow: hidden; /* prevents scrolling */
+}
+
+.header {
+        text-align: center;
+        margin-bottom: 80px;
+}
+
+.header h1 {
+        font-size: 5em;
+        font-weight: bold;
+        color: #fff;
+        text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.6);
+}
+
+.card-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+        margin-bottom: 200px;
+}
+
+.player-card {
+        border: 1px solid #474747;
+        padding: 20px;
+        background-color: rgba(17, 17, 17, 0.863);
+        border-radius: 8px;
+        text-align: center;
+        overflow: hidden;
+        width: 200px;
+        height: 270px;
+        position: relative;
+        transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out; /* smooth transition for transform and box-shadow */
+        will-change: transform, box-shadow; /* optimizes animations by letting the browser know which properties are expected to change */
+        cursor: pointer;
+}
+
+.player-card:hover {
+        transform: scale(1.05); /* enlarges the card a little */
+        box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2); /* deep shadow for a "lifted" effect */
+}
+
+.player-card img {
+        max-width: 150px;
+        height: auto;
+        border-radius: 50%;
+}
+
+.player-card p {
+        margin-top: 20px;
+        font-size: 18px;
+        color: #fff;
+}
+.player-card h2 {
+        margin-top: 30px;
+        color: #fff;
+}
+
+.overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.7); /* semi-transparent black background */
+        color: #fff;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        opacity: 0; /* hidden by default */
+        transition: opacity 0.3s ease-in-out;
+}
+
+.player-card:hover .overlay {
+        opacity: 1; /* show on hover */
+}
+
+.player-card img {
+        filter: grayscale(100%);
+        transition: transform 0.3s ease-in-out;
+}
+
+.player-card:hover img {
+        filter: grayscale(0%);
+        transform: scale(1.05);
+        transform: rotate(360deg);
+>>>>>>> Stashed changes
 }
