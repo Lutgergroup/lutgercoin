@@ -44,7 +44,13 @@ function togglePlayerCards() {
     playerCardsVisible = !playerCardsVisible; // Toggle the visibility state
 }
 
+document.addEventListener("DOMContentLoaded", function() {
+    const fadeDiv = document.getElementById("scroll-fade");
+    const fadeHeight = 0; // Set to 0 to start fading immediately
 
-function goBack() {
-    window.history.back(); // Dieser Befehl lässt den Benutzer zur vorherigen Seite zurücknavigieren
-}
+    // Update the fading effect when the page is scrolled
+    window.addEventListener("scroll", function() {
+        const scrolled = window.scrollY;
+        fadeDiv.style.height = (scrolled > fadeHeight) ? "10%" : "0%";
+    });
+});
