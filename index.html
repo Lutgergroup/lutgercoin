@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 
 <head>
     <meta charset="UTF-8">
@@ -8,20 +8,69 @@
     </title>
     <link rel="icon" type="image/x-icon" href="/public/favicon.png">
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="navbar.css" >
 </head>
 
+<header>
+    <div class="header img">
+        <img class="bitcoin-logo" src="/public/Logo.png" alt="Bitcoin Logo">
+</header>
+
 <body>
-    <header>
-        <div class="header img">
-            <img class="bitcoin-logo" src="/public/Logo.png" alt="Bitcoin Logo">
-    </header>
 
+    <input type="checkbox" id="openmenu" class="hamburger-checkbox" onclick="menuToggle()">
+
+    <div class="hamburger-icon">
+        <label for="openmenu" id="hamburger-label">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+        </label>
+    </div>
+
+    <div class="menu-pane">
+
+        <nav>
+            <ul class="menu-links">
+                <li><a href="index.html">Home</a><span id="QC-info">
+                    </span>
+
+                </li>
+
+                <li><a href="###">.</a>
+
+                </li>
+                <li><a href="###">.</a></li>
+                <li><a href="###">.</a></li>
+            </ul>
+            <ul class="menu-links">
+                <li><a href="lutgers.html">The Founding Fathers</a><span id="QC-info">
+                    </span>
+                </li>
+
+                <li><a href="###">.</a></li>
+                <li><a href="###">.</a></li>
+                <li><a href="###">.</a></li>
+            </ul>
+            <ul class="menu-links">
+                <li><a onclick="Fortnite()">Fortnite</a>
+                    <span id="DC-info">
+                    </span>
+                </li>
+
+                <li><a href="###">.</a></li>
+                <li><a href="###">.</a></li>
+                <li><a href="###">.</a></li>
+            </ul>
+
+
+        </nav>
+    </div>
     <main>
-
         <p style="font-size: 12px; color: #999;">
             By submitting your email, you acknowledge and agree to our <a href="terms-and-conditions.html"
-                target="_blank">Terms and Conditions</a> and <a href="privacy-policy.html"
-                target="_blank">Privacy
+                target="_blank">Terms and Conditions</a> and <a href="privacy-policy.html" target="_blank">Privacy
                 Policy</a>.
         </p>
         <p>Bitcoin is a decentralized digital currency that enables peer-to-peer transactions without the need for
@@ -31,8 +80,6 @@
         <p>Bitcoin is often referred to as a cryptocurrency because it uses cryptographic techniques to secure
             transactions and control the creation of new units. It has gained popularity as a store of value and a
             speculative investment, and its price can be highly volatile. Also Web3!</p>
-
-
         <div class="main-container">
             <div class="header">
                 <h1>More Info</h1>

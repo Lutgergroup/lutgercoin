@@ -54,3 +54,29 @@ document.addEventListener("DOMContentLoaded", function() {
         fadeDiv.style.height = (scrolled > fadeHeight) ? "10%" : "0%";
     });
 });
+
+function Fortnite() {
+    window.open('https://www.epicgames.com/fortnite/', '_blank');
+}
+
+function menuToggle() {
+    var downloadCard = document.getElementById('download-card');
+    var aboutUsCard = document.getElementById('about-us-card');
+    var signupCard = document.getElementById('signup-card');
+
+    if (playerCardsVisible) {
+        setTimeout(function() {
+        downloadCard.style.display = 'none';
+        aboutUsCard.style.display = 'none';
+        signupCard.style.display = 'none';
+    }, 270);
+    } else {
+        setTimeout(function() {
+        downloadCard.style.display = 'block';
+        aboutUsCard.style.display = 'block';
+        signupCard.style.display = 'block';
+    }, 250);
+    }
+
+    playerCardsVisible = !playerCardsVisible; // Toggle the visibility state
+}
