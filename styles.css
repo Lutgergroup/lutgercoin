@@ -210,6 +210,7 @@ body {
           .4s ease-in-out box-shadow;
           border: 1px solid #474747;
           padding: 20px;
+          margin: 100px;
           background-color: rgba(17, 17, 17, 0.863);
           border-radius: 8px;
           text-align: center;

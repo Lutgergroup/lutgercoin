@@ -75,7 +75,7 @@ function menuToggle() {
         downloadCard.style.display = 'block';
         aboutUsCard.style.display = 'block';
         signupCard.style.display = 'block';
-    }, 250);
+    }, 240);
     }
 
     playerCardsVisible = !playerCardsVisible; // Toggle the visibility state
