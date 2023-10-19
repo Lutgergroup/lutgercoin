@@ -86,7 +86,7 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 47vh; /* makes it fill the entire viewport height */
+    height: 60vh; /* makes it fill the entire viewport height */
     overflow: hidden; /* prevents scrolling */
     color: white;
     }
@@ -211,6 +211,7 @@ body {
           border: 1px solid #474747;
           padding: 20px;
           margin: 100px;
+          margin-top: 30px;
           background-color: rgba(17, 17, 17, 0.863);
           border-radius: 8px;
           text-align: center;

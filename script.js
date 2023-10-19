@@ -80,3 +80,30 @@ function menuToggle() {
 
     playerCardsVisible = !playerCardsVisible; // Toggle the visibility state
 }
+
+function infoToggleMart() {
+    var marttext = document.getElementById('marttext')
+    var marvtext = document.getElementById('marvtext')
+
+    if(marttext.style.display ==='none'){
+        marttext.style.display ='block';
+        marvtext.style.display ='none';
+    }
+    else {
+        marttext.style.display ='none';
+        marvtext.style.display ='none';
+    }
+}
+
+function infoToggleMarv() {
+    var marttext = document.getElementById('marttext')
+    var marvtext = document.getElementById('marvtext')
+if(marvtext.style.display ==='none'){
+    marvtext.style.display ='block';
+    marttext.style.display ='none';
+}
+else {
+    marvtext.style.display ='none';
+    marttext.style.display ='none';
+}
+}

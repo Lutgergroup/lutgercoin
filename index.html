@@ -16,7 +16,7 @@
         <img class="bitcoin-logo" src="/public/Logo.png" alt="Bitcoin Logo">
 </header>
 
-<body>
+<body style="overflow: hidden;">
 
     <input type="checkbox" id="openmenu" class="hamburger-checkbox">
 
@@ -68,11 +68,6 @@
         </nav>
     </div>
     <main>
-        <p style="font-size: 12px; color: #999;">
-            By submitting your email, you acknowledge and agree to our <a href="terms-and-conditions.html"
-                target="_blank">Terms and Conditions</a> and <a href="privacy-policy.html" target="_blank">Privacy
-                Policy</a>.
-        </p>
         <p>Bitcoin is a decentralized digital currency that enables peer-to-peer transactions without the need for
             intermediaries such as banks. It was created by an anonymous person or group of people using the pseudonym
             Satoshi Nakamoto and was introduced in 2009. Bitcoin transactions are recorded on a public ledger called the
@@ -82,7 +77,6 @@
             speculative investment, and its price can be highly volatile. Also Web3!</p>
         <div class="main-container">
             <div class="header">
-                <h1>More Info</h1>
             </div>
 
             <div class="card-container">
@@ -113,10 +107,15 @@
                 </div>
             </div>
             <form action="save_email.php" method="POST">
-                <div id="signup-form" style="display: none;text-align: center;">
+                <div id="signup-form" style="display: none;text-align: center;padding-top: 10px;">
                     <input type="email" id="email" name="email" style="width: 500px;" placeholder="Your email address">
                     <button id="signup-submit">Sign Up</button>
                 </div>
+                <p style="font-size: 12px; color: #999;">
+                    By submitting your email, you acknowledge and agree to our <a href="terms-and-conditions.html"
+                        target="_blank">Terms and Conditions</a> and <a href="privacy-policy.html" target="_blank">Privacy
+                        Policy</a>.
+                </p>
     </main>
     <footer>
         &copy; 2023 Bitcoin Download Page
