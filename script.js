@@ -55,8 +55,8 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 });
 
-function Fortnite() {
-    window.open('https://www.epicgames.com/fortnite/', '_blank');
+function Run3() {
+    window.open('https://www.coolmathgames.com/0-run-3', '_blank');
 }
 
 function menuToggle() {
