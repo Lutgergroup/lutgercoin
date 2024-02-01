@@ -1,64 +1,69 @@
+<!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Bitcoin Download</title>
-        <link rel="icon" type="image/x-icon" href="/public/favicon.png">
-        <link rel="stylesheet" href="styles.css">
-        <link rel="stylesheet" href="navbar.css">
-    </head>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bitcoin Download</title>
+    <link rel="icon" type="image/x-icon" href="/public/favicon.png">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="navbar.css">
+    <style>
+        body, html {
+            height: 100%;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+        }
+        .container {
+            text-align: center;
+            overflow: hidden; /* Hides the overflow */
+        }
+    </style>
+</head>
+<body>
     <header>
         <div class="header img">
             <img class="bitcoin-logo" src="/public/Logo.webp" alt="Bitcoin Logo">
+        </div>
     </header>
-    <body overflow ="hidden">
-        <input type="checkbox" id="openmenu" class="hamburger-checkbox" onclick="menuToggle()">
-        <div class="hamburger-icon">
-            <label for="openmenu" id="hamburger-label">
-                <span></span>
-                <span></span>
-                <span></span>
-                <span></span>
-            </label>
-        </div>
-    
-        <div class="menu-pane">
-    
-            <nav>
-                <ul class="menu-links">
-                    <li><a href="index.html">Home</a><span id="QC-info">
-                        </span>
-    
-                    </li>
-    
-                    <li><a href="###">.</a>
-    
-                    </li>
-                    <li><a href="###">.</a></li>
-                    <li><a href="###">.</a></li>
-                </ul>
-                <ul class="menu-links">
-                    <li><a href="lutgers.html">The Founding Fathers</a><span id="QC-info">
-                        </span>
-                    </li>
-    
-                    <li><a href="###">.</a></li>
-                    <li><a href="###">.</a></li>
-                    <li><a href="###">.</a></li>
-                </ul>
-                <ul class="menu-links">
-                    <li><a href="###">Games</a><span id="QC-info">
-                        </span>
-                    </li>
-    
-                    <li><a href="run3.html">Run3</a></li>
-                    <li><a href="tetris.html">Tetris</a></li>
-                    <li><a href="minecraft.html">Minecraft Classic</a></li>    
-                </ul>
-    
-    
-            </nav>
-        </div>
-    <iframe id="html5game" src="https://lekug.github.io/tn6pS9dCf37xAhkJv/" class="square no-select" width="90%" height="90%" scrolling="no" marginwidth="0" vspace="0" frameborder="0" hspace="0" marginheight="0" text-align="center" allow="web-share; clipboard-read; clipboard-write"></iframe>
-    </body>    
+
+    <input type="checkbox" id="openmenu" class="hamburger-checkbox" onclick="menuToggle()">
+    <div class="hamburger-icon">
+        <label for="openmenu" id="hamburger-label">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+        </label>
+    </div>
+
+    <div class="menu-pane">
+        <nav>
+            <ul class="menu-links">
+                <li><a href="index.html">Home</a><span id="QC-info"></span></li>
+                <li><a href="###">.</a></li>
+                <li><a href="###">.</a></li>
+                <li><a href="###">.</a></li>
+            </ul>
+            <ul class="menu-links">
+                <li><a href="lutgers.html">The Founding Fathers</a><span id="QC-info"></span></li>
+                <li><a href="###">.</a></li>
+                <li><a href="###">.</a></li>
+                <li><a href="###">.</a></li>
+            </ul>
+            <ul class="menu-links">
+                <li><a href="###">Games</a><span id="QC-info"></span></li>
+                <li><a href="run3.html">Run3</a></li>
+                <li><a href="tetris.html">Tetris</a></li>
+                <li><a href="minecraft.html">Minecraft Classic</a></li>    
+            </ul>
+        </nav>
+    </div>
+
+    <div class="container">
+        <iframe id="html5game" src="https://lekug.github.io/tn6pS9dCf37xAhkJv/" class="square no-select" width="90%" height="90%" scrolling="no" marginwidth="0" vspace="0" frameborder="0" hspace="0" marginheight="0" allow="web-share; clipboard-read; clipboard-write"></iframe>
+    </div>
+</body>
 </html>
