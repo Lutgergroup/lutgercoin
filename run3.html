@@ -8,9 +8,20 @@
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="navbar.css">
     <style>
-        .iframeholder {
+        body, html {
+            height: 100%;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .container {
             text-align: center;
             overflow: hidden; /* Hides the overflow */
+        }
+        #html5game {
+            width: 80vw; /* 80% of the viewport width */
+            height: 80vh; /* 80% of the viewport height */
         }
     </style>
 </head>
@@ -54,8 +65,8 @@
         </nav>
     </div>
 
-    <div class="iframeholer">
-        <iframe id="html5game" src="https://lekug.github.io/tn6pS9dCf37xAhkJv/"></iframe>
+    <div class="container">
+        <iframe id="html5game" src="https://lekug.github.io/tn6pS9dCf37xAhkJv/" class="square no-select" scrolling="no" marginwidth="0" vspace="0" frameborder="0" hspace="0" marginheight="0" allow="web-share; clipboard-read; clipboard-write"></iframe>
     </div>
 </body>
 </html>
