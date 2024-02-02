@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Slot Machine</title>
+<style>
+  .slot {
+    display: inline-block;
+    width: 100px;
+    height: 100px;
+    border: 1px solid black;
+    margin: 10px;
+    text-align: center;
+    line-height: 100px;
+    font-size: 24px;
+  }
+</style>
+</head>
+<body>
+<h1>Slot Machine</h1>
+<div class="slot" id="slot1">0</div>
+<div class="slot" id="slot2">0</div>
+<div class="slot" id="slot3">0</div>
+<button onclick="spin()">Spin</button>
+
+<script>
+  function spin() {
+    var slot1Value = Math.floor(Math.random() * 10);
+    var slot2Value = Math.floor(Math.random() * 10);
+    var slot3Value = Math.floor(Math.random() * 10);
+
+    document.getElementById('slot1').textContent = slot1Value;
+    document.getElementById('slot2').textContent = slot2Value;
+    document.getElementById('slot3').textContent = slot3Value;
+
+    if (slot1Value === slot2Value && slot2Value === slot3Value) {
+      alert("Congratulations! You win!");
+    } else {
+      alert("Try again!");
+    }
+  }
+</script>
+</body>
+</html>
