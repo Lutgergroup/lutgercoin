@@ -4,12 +4,14 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Slot Machine</title>
+<link rel="stylesheet" href="styles.css">
 <style>
   .slot {
     display: inline-block;
+    text-align: center;
     width: 100px;
     height: 100px;
-    border: 1px solid black;
+    border: 3px solid black;
     margin: 10px;
     text-align: center;
     line-height: 100px;
@@ -19,9 +21,11 @@
 </head>
 <body>
 <h1>Slot Machine</h1>
+<div class="container">
 <div class="slot" id="slot1">0</div>
 <div class="slot" id="slot2">0</div>
 <div class="slot" id="slot3">0</div>
+</div>
 <button onclick="spin()">Spin</button>
 
 <script>
@@ -33,12 +37,6 @@
     document.getElementById('slot1').textContent = slot1Value;
     document.getElementById('slot2').textContent = slot2Value;
     document.getElementById('slot3').textContent = slot3Value;
-
-    if (slot1Value === slot2Value && slot2Value === slot3Value) {
-      alert("Congratulations! You win!");
-    } else {
-      alert("Try again!");
-    }
   }
 </script>
 </body>
