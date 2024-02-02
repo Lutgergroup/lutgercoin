@@ -22,7 +22,7 @@
 </head>
 <body>
 <h1>Slot Machine</h1>
-<div class="container">
+<div class="main-container">
 <div class="slot" id="slot1">0</div>
 <div class="slot" id="slot2">0</div>
 <div class="slot" id="slot3">0</div>
@@ -38,6 +38,10 @@
     document.getElementById('slot1').textContent = slot1Value;
     document.getElementById('slot2').textContent = slot2Value;
     document.getElementById('slot3').textContent = slot3Value;
+
+    if (slot1Value === slot2Value && slot2Value === slot3Value) {
+      alert("Congratulations! You win!");
+    }
   }
 </script>
 </body>
