@@ -161,19 +161,6 @@
                                         </img>`;
                                 }
                                 slotElement.innerHTML = content;
-
-                                 // Now declare and initialize slot content variables after populating the slot
-                                    const slot1Content = document.getElementById('slot1').innerHTML;
-                                    const slot2Content = document.getElementById('slot2').innerHTML;
-                                    const slot3Content = document.getElementById('slot3').innerHTML;
-
-                                     // log weil die scheiße nicht funzt
-                                        console.log("Slot 1:", slot1Content);
-                                        console.log("Slot 2:", slot2Content);
-                                        console.log("Slot 3:", slot3Content);
-
-                                    // Return the slot content variables if needed
-                                    return [slot1Content, slot2Content, slot3Content];
                         }
 
                         function spin() {
@@ -185,6 +172,15 @@
                                 populateSlot("slot1");
                                 populateSlot("slot2");
                                 populateSlot("slot3");
+
+                                    const slot1Content = document.getElementById('slot1').innerHTML;
+                                    const slot2Content = document.getElementById('slot2').innerHTML;
+                                    const slot3Content = document.getElementById('slot3').innerHTML;
+
+                                     // log weil die scheiße nicht funzt
+                                        console.log("Slot 1:", slot1Content);
+                                        console.log("Slot 2:", slot2Content);
+                                        console.log("Slot 3:", slot3Content);
 
                                 document.querySelectorAll(".slot").forEach((emoji, index) => {
                                         setTimeout(() => {
