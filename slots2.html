@@ -133,32 +133,46 @@
                         "https://cdn.discordapp.com/attachments/1110126401425776740/1204380928818806784/slots_icon_majorl.png?ex=65d48625&is=65c21125&hm=af876d244c679fb93eb2d4111d5f51d62aebd84bad512a69c83f29c4b2c73573&"
                         ];
                         let spinning = false;
-                        let lastImageSrc = "";
+                        let lastImageSrc1 = "";
+                        let lastImageSrc2 = "";
+                        let lastImageSrc3 = "";
 
-                        function populateSlot(slotId) {
-                            let selection = [];
-                            console.log(slotId);
-                            switch (slotId) {
-                                case "slot1":
-                                case "slot2":
-                                case "slot3":
-                                    selection = lutger; // Assign the same array for each slot
-                                    break;
-                            }
-                            const slotElement = document.getElementById(slotId);
-                            let content = ""; // Variable to store the content of all images
-                            for (let i = 0; i < 30; i++) {
-                                let imageSrc = selection[Math.floor(Math.random() * selection.length)];
-                                if (i === 28) {
-                                    lastImageSrc = imageSrc; // Store the URL of the 29th run
+                        function populateSlot(slotId, slotNumber) {
+                                let selection = [];
+                                console.log(slotId);
+                                switch (slotId) {
+                                    case "slot1":
+                                    case "slot2":
+                                    case "slot3":
+                                        selection = lutger; // Assign the same array for each slot
+                                        break;
                                 }
-                                content += `<img width="60" height="60" class="emoji" style="top:${i * 100}px" src=${imageSrc}></img>`;
+                                const slotElement = document.getElementById(slotId);
+                                let content = ""; // Variable to store the content of all images
+                                for (let i = 0; i < 30; i++) {
+                                    let imageSrc = selection[Math.floor(Math.random() * selection.length)];
+                                    if (i === 28) {
+                                        switch (slotNumber) {
+                                            case 1:
+                                                lastImageSrcSlot1 = imageSrc; // Store the URL of the 29th run for slot 1
+                                                console.log("Last image URL for slot 1:", lastImageSrcSlot1); // Log the last image URL for slot 1
+                                                break;
+                                            case 2:
+                                                lastImageSrcSlot2 = imageSrc; // Store the URL of the 29th run for slot 2
+                                                console.log("Last image URL for slot 2:", lastImageSrcSlot2); // Log the last image URL for slot 2
+                                                break;
+                                            case 3:
+                                                lastImageSrcSlot3 = imageSrc; // Store the URL of the 29th run for slot 3
+                                                console.log("Last image URL for slot 3:", lastImageSrcSlot3); // Log the last image URL for slot 3
+                                                break;
+                                        }
+                                    }
+                                    content += `<img width="60" height="60" class="emoji" style="top:${i * 100}px" src=${imageSrc}></img>`;
+                                }
+                                // Use the last image URL for the slot
+                                slotElement.innerHTML = content;
+                                return slotElement.innerHTML;
                             }
-                            // Use the last image URL for the slot
-                            slotElement.innerHTML = content;
-                            return slotElement.innerHTML;
-
-                        }
 
 
                         function spin() {
