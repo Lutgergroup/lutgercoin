@@ -16,31 +16,54 @@
     text-align: center;
     line-height: 100px;
     font-size: 24px;
+    transition: all 0.5s ease-in-out; /* Add transition for smooth animation */
   }
 </style>
 </head>
 <body>
 <h1>Slot Machine</h1>
 <div class="main-container">
-<div class="slot" id="slot1">0</div>
-<div class="slot" id="slot2">0</div>
-<div class="slot" id="slot3">0</div>
+  <div class="slot" id="slot1">0</div>
+  <div class="slot" id="slot2">0</div>
+  <div class="slot" id="slot3">0</div>
 </div>
 <button onclick="spin()">Spin</button>
 
 <script>
   function spin() {
-    var slot1Value = Math.floor(Math.random() * 10);
-    var slot2Value = Math.floor(Math.random() * 10);
-    var slot3Value = Math.floor(Math.random() * 10);
+    // Disable button during animation
+    document.querySelector('button').disabled = true;
 
-    document.getElementById('slot1').textContent = slot1Value;
-    document.getElementById('slot2').textContent = slot2Value;
-    document.getElementById('slot3').textContent = slot3Value;
+    // Simulate spinning reels
+    var spins = 5; // Number of spins
+    var delay = 100; // Delay between spins in milliseconds
 
-    if (slot1Value === slot2Value && slot2Value === slot3Value) {
-      alert("Congratulations! You win!");
-    }
+    var interval = setInterval(function() {
+      // Randomize slot values for spinning effect
+      var slot1Value = Math.floor(Math.random() * 10);
+      var slot2Value = Math.floor(Math.random() * 10);
+      var slot3Value = Math.floor(Math.random() * 10);
+
+      document.getElementById('slot1').textContent = slot1Value;
+      document.getElementById('slot2').textContent = slot2Value;
+      document.getElementById('slot3').textContent = slot3Value;
+
+      // Decrement spins counter
+      spins--;
+
+      // Stop spinning after all spins are completed
+      if (spins === 0) {
+        clearInterval(interval);
+
+        // Re-enable button after animation completes
+        document.querySelector('button').disabled = false;
+
+        // Check for win condition
+        if (slot1Value === slot2Value && slot2Value === slot3Value) {
+          alert("Congratulations! You win!");
+        }
+      }
+    }, delay);
   }
 </script>
 </body>
