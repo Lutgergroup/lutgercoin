@@ -145,23 +145,14 @@
                                         break;
                                 }
                                 const slotElement = document.getElementById(slotId);
-                                let content = "";
-                                for (let i = 0; i < 1; i++) {
-                                        const src =
-                                                selection[Math.floor(Math.random() * selection.length)];
-                                        content += `<img width="60" height="60" class="emoji" style="top:${
-                                                i * 100
-                                        }px"
-                                        src=${src}>
-
-                                        </img>`;
+                                let lastImageSrc = ""; // Variable to store the source URL of the last image
+                                for (let i = 0; i < 30; i++) {
+                                    lastImageSrc = selection[Math.floor(Math.random() * selection.length)];
                                 }
+                                // Use the last image URL for the slot
+                                const content = `<img width="60" height="60" class="emoji" style="top:0px" src=${lastImageSrc}></img>`;
                                 slotElement.innerHTML = content;
-
-
-                                const slotContent = slotElement.innerHTML;
-                                console.log(`Content of ${slotId}:`, slotContent); // Log the content of the slot
-                                return slotContent;
+                                return slotElement.innerHTML;
                         }
 
                         function spin() {
