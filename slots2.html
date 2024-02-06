@@ -121,8 +121,11 @@
 
                         const lutger = [
 
-                        "https://cdn.discordapp.com/attachments/1110126401425776740/1163456916060635217/faq.png?ex=65d34cb0&is=65c0d7b0&hm=d2efcdea548f7cb7bd4c9373359efbc807155915f2acf8c16b0979ca903f856b&"
-
+                        "https://cdn.discordapp.com/attachments/1110126401425776740/1204375705681395712/slots_icon_5.png?ex=65d48148&is=65c20c48&hm=b075ce976b1eb535bcbb904695d2409bc6e1d405f26153b85488e2e3af5d5583&",
+                        "https://cdn.discordapp.com/attachments/1110126401425776740/1204375706340032552/slots_icon_1.png?ex=65d48148&is=65c20c48&hm=e20894eb8c4b44323bca8a4b476cac39726bc67fb7b63f18b59dc8b099f55149&",
+                        "https://cdn.discordapp.com/attachments/1110126401425776740/1204375706671517756/slots_icon_2.png?ex=65d48148&is=65c20c48&hm=fa6fe2c7bf4694afe3ca8bd0acfdb160cc0e5786be787666ea2efb4ad8640e23&",
+                        "https://cdn.discordapp.com/attachments/1110126401425776740/1204375706969186324/slots_icon_3.png?ex=65d48148&is=65c20c48&hm=1cc36ccdd936aa80f8eeb174ebb4927295a385a4225094347d6025d000fd92d2&",
+                        "https://cdn.discordapp.com/attachments/1110126401425776740/1204375707246141520/slots_icon_4.png?ex=65d48148&is=65c20c48&hm=92fafc0ea10ccb230c869078b81f63807adeaf3d34c5e3e94c6eb7a96db8dfc4&"
                         ];
 
                         const teams = [
@@ -201,10 +204,10 @@
 
                                             if (slot1Content === slot2Content && slot2Content === slot3Content) {
                                                 // If all slots display the same content, choose a different image for win animation
-                                                emoji.src = images[0];
+                                                emoji.src = images.length > 0 ? images[0] : '';
                                             } else {
                                                 // Otherwise, choose a random image from the regular images array
-                                                emoji.src = images[1];
+                                                emoji.src = images.length > 1 ? images[1] : '';
                                             }
                                             emoji.classList.add("win");
                                         }
