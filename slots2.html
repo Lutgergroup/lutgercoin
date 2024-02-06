@@ -145,16 +145,16 @@
                                         break;
                                 }
                                 const slotElement = document.getElementById(slotId);
-                                let lastImageSrc = ""; // Variable to store the source URL of the last image
-                                for (let i = 0; i < 30; i++) {
-                                    lastImageSrc = selection[Math.floor(Math.random() * selection.length)];
+                                    let lastImageSrc = ""; // Variable to store the source URL of the last image
+                                    let content = ""; // Variable to store the content of all images
+                                    for (let i = 0; i < 30; i++) {
+                                        lastImageSrc = selection[Math.floor(Math.random() * selection.length)];
+                                        content += `<img width="60" height="60" class="emoji" style="top:${i * 100}px" src=${lastImageSrc}></img>`;
+                                    }
+                                    // Use the last image URL for the slot
+                                    slotElement.innerHTML = content;
+                                    return slotElement.innerHTML;
                                 }
-                                // Use the last image URL for the slot
-                                const content = `<img width="60" height="60" class="emoji" style="top:0px" src=${lastImageSrc}></img>`;
-                                slotElement.innerHTML = content;
-                                return slotElement.innerHTML;
-                        }
-
                         function spin() {
                                 if (spinning) return;
                                 document.querySelectorAll(".slot").forEach((emoji, index) => {
