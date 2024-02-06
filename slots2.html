@@ -211,7 +211,7 @@
                                      if (index !== 58) emoji.classList.add("blur");
                                      else {                                       
 
-                                            if (slot1Content === slot2Content && slot2Content === slot3Content) {
+                                            if (lastImageSrcSlot1 === lastImageSrcSlot2 && lastImageSrcSlot2 === lastImageSrcSlot3) {
                                                 // If all slots display the same content, choose a different image for win animation
                                                 emoji.src = images[0];
                                             } else {
