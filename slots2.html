@@ -128,22 +128,9 @@
                         "https://cdn.discordapp.com/attachments/1110126401425776740/1204375707246141520/slots_icon_4.png?ex=65d48148&is=65c20c48&hm=92fafc0ea10ccb230c869078b81f63807adeaf3d34c5e3e94c6eb7a96db8dfc4&"
                         ];
 
-                        const teams = [
-                        
-                        "https://cdn.discordapp.com/attachments/1110126401425776740/1163456916060635217/faq.png?ex=65d34cb0&is=65c0d7b0&hm=d2efcdea548f7cb7bd4c9373359efbc807155915f2acf8c16b0979ca903f856b&"
-                        ];
-                        const nations = [
-                        
-                        "https://cdn.discordapp.com/attachments/1110126401425776740/1163456916060635217/faq.png?ex=65d34cb0&is=65c0d7b0&hm=d2efcdea548f7cb7bd4c9373359efbc807155915f2acf8c16b0979ca903f856b&"
-                        ];
-
-                        const rarities = [
-                        
-                        "https://cdn.discordapp.com/attachments/1110126401425776740/1163456916060635217/faq.png?ex=65d34cb0&is=65c0d7b0&hm=d2efcdea548f7cb7bd4c9373359efbc807155915f2acf8c16b0979ca903f856b&"
-                        ];
                         const images = [
-                        "https://cdn.discordapp.com/attachments/1110126401425776740/1163456916060635217/faq.png?ex=65d34cb0&is=65c0d7b0&hm=d2efcdea548f7cb7bd4c9373359efbc807155915f2acf8c16b0979ca903f856b&",
-                        "https://cdn.discordapp.com/attachments/1110126401425776740/1163391175458291802/Bitcoin_Download_Logo_2.png?ex=65d30f76&is=65c09a76&hm=c7df6f876e9e0cbf30e7ad0df102107ea909cb6a6271fe270a485f6667dce526&"
+                        "https://cdn.discordapp.com/attachments/1110126401425776740/1204380929209143306/slots_icon_dub.png?ex=65d48625&is=65c21125&hm=2266b57aa0b854c9bf52972d5a4a95bda998294aeacfbc7867860c7fe4695f31&",
+                        "https://cdn.discordapp.com/attachments/1110126401425776740/1204380928818806784/slots_icon_majorl.png?ex=65d48625&is=65c21125&hm=af876d244c679fb93eb2d4111d5f51d62aebd84bad512a69c83f29c4b2c73573&"
                         ];
                         let spinning = false;
 
@@ -214,10 +201,10 @@
 
                                             if (slot1Content === slot2Content && slot2Content === slot3Content) {
                                                 // If all slots display the same content, choose a different image for win animation
-                                                emoji.src = "https://cdn.discordapp.com/attachments/1110126401425776740/1163456916060635217/faq.png?ex=65d34cb0&is=65c0d7b0&hm=d2efcdea548f7cb7bd4c9373359efbc807155915f2acf8c16b0979ca903f856b&";
+                                                emoji.src = images[0];
                                             } else {
                                                 // Otherwise, choose a random image from the regular images array
-                                                emoji.src = "https://cdn.discordapp.com/attachments/1110126401425776740/1163391175458291802/Bitcoin_Download_Logo_2.png?ex=65d30f76&is=65c09a76&hm=c7df6f876e9e0cbf30e7ad0df102107ea909cb6a6271fe270a485f6667dce526&";
+                                                emoji.src = images[1];
                                             }
                                             emoji.classList.add("win");
                                         }
