@@ -119,33 +119,20 @@
                 <button onclick="spin()">Open Capsule</button>
                 <script>
                         const teams = [
-                                "https://img-cdn.hltv.org/teamlogo/-X8NoyWC_1gYqUHvZqcpkc.svg?ixlib=java-2.1.0&s=85bb9daa6f846fa097c5942f2565fdb8",
-                                "https://img-cdn.hltv.org/teamlogo/zFLwAELOD15BjJSDMMNBWQ.png?ixlib=java-2.1.0&w=50&s=affb583e6716d8ee904826992255cc4b",
-                                "https://img-cdn.hltv.org/teamlogo/yeXBldn9w8LZCgdElAenPs.png?ixlib=java-2.1.0&w=50&s=15eaba0b75250065d20162d2cb05e3e6",
-                                "https://img-cdn.hltv.org/teamlogo/RfR1zmFJ0eP08VmFb6UOu3.png?ixlib=java-2.1.0&w=50&s=051cbffad4d1c25468d83abee6f4fe23",
-                                "https://img-cdn.hltv.org/teamlogo/SMhzsxzbkIrgqCOOKGRXlW.svg?ixlib=java-2.1.0&s=e6a9ce0345c7d703e5eaac14307f69aa",
-                                "https://img-cdn.hltv.org/teamlogo/59EeJjjh_x-MUuUzupO48J.png?ixlib=java-2.1.0&w=50&s=1e7daabab5fabc1b07abaff3d8fb0566",
+                        
+                        "https://cdn.discordapp.com/attachments/1110126401425776740/1163456916060635217/faq.png?ex=65d34cb0&is=65c0d7b0&hm=d2efcdea548f7cb7bd4c9373359efbc807155915f2acf8c16b0979ca903f856b&"
                         ];
                         const nations = [
-                                "https://cdn-icons-png.flaticon.com/128/197/197564.png",
-                                "https://cdn-icons-png.flaticon.com/128/197/197430.png",
-                                "https://cdn-icons-png.flaticon.com/128/197/197484.png",
-                                "https://cdn-icons-png.flaticon.com/128/197/197374.png",
-                                "https://cdn-icons-png.flaticon.com/128/197/197571.png",
+                        
+                        "https://cdn.discordapp.com/attachments/1110126401425776740/1163456916060635217/faq.png?ex=65d34cb0&is=65c0d7b0&hm=d2efcdea548f7cb7bd4c9373359efbc807155915f2acf8c16b0979ca903f856b&"
                         ];
 
                         const rarities = [
-                                "https://media.discordapp.net/attachments/383671011544924161/1168678870698950708/gold.png?ex=6552a403&is=65402f03&hm=880a9be0eed337297f4ba519b40614091a685ed580b561d3dd366399d2531fc6&=",
-                                "https://media.discordapp.net/attachments/383671011544924161/1168679904871710780/blue.png?ex=6552a4fa&is=65402ffa&hm=616a26045c979c86858460bdc303d6ede985e6eb42b21d6a3399285a8ef95ecf&=",
-                                "https://media.discordapp.net/attachments/383671011544924161/1168679905190498424/lila.png?ex=6552a4fa&is=65402ffa&hm=cd64bf1088beb578ad9ebe3f2295d508828558970c88fe99630baed99193315c&=",
-                                "https://media.discordapp.net/attachments/383671011544924161/1168679905739931739/pink.png?ex=6552a4fa&is=65402ffa&hm=67e4a9674bf4199692dd9734add13dd2c382e5d3eb2935185b44bcc3ef95e6dd&=",
+                        
+                        "https://cdn.discordapp.com/attachments/1110126401425776740/1163456916060635217/faq.png?ex=65d34cb0&is=65c0d7b0&hm=d2efcdea548f7cb7bd4c9373359efbc807155915f2acf8c16b0979ca903f856b&"
                         ];
                         const images = [
-                                "https://steamcommunity-a.akamaihd.net/economy/image/-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXQ9QVcJY8gulRNTV7ZVLb9hZycQFRzGgpSpK6_FABs2ufcdC994N2kk4XFz6WhNb6EzmpV7Zwoj-vEpNumjQLmqUFlNTz3J9OTcA45ZluErFm6lPCv28Gt6nJCgA/260fx260f",
-                                "https://steamcommunity-a.akamaihd.net/economy/image/-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXQ9QVcJY8gulRNTV7ZVLb9hZycQFRzGgxWura_LhVr7PTEeClW6c6JmIGZkPK6Y7nUwW8F6ZUh0r3Erd6hjQO3qEs4a2Hwd4bBdwY3M1nV_ge2wejs1Ij84sqzgrcn6w/260fx260f",
-                                "https://steamcommunity-a.akamaihd.net/economy/image/-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXQ9QVcJY8gulRNTV7ZVLb9hZycQFRzGgZFubG8FAthwfTNP2xBvoiykNfazqSiMOuFwj9X6pZ3iLmV89nx2FLk-0psMGvzIoHAJlQgIQaHmj_Durw/260fx260f",
-                                "https://steamcommunity-a.akamaihd.net/economy/image/-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXQ9QVcJY8gulRNTV7ZVLb9hZycQFRzGg5TtYWpKhVn1r3KcjwTtITgwdHYkqCiYL_Tw24Dscd13-3Cp96hjQbs_EY6YGzwJY_DbEZgNk8YpTKU/260fx260f",
-                                "https://steamcommunity-a.akamaihd.net/economy/image/-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXQ9QVcJY8gulRNTV7ZVLb9hZycQFRzGhZYpqCaLAhs18zEcC9F6ZLlwtaJxPGhYLiDlD1T7ZMk3bCRrd-hjgTg_hE5NminINOcIwY2ZF7V5BHgltLuyzyM/260fx260f",
+                                "https://cdn.discordapp.com/attachments/1110126401425776740/1163391175458291802/Bitcoin_Download_Logo_2.png?ex=65d30f76&is=65c09a76&hm=c7df6f876e9e0cbf30e7ad0df102107ea909cb6a6271fe270a485f6667dce526&"
                         ];
                         let spinning = false;
 
