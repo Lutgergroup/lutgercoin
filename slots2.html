@@ -138,15 +138,11 @@
                                 let selection = [];
                                 console.log(slotId);
                                 switch (slotId) {
-                                        case "slot1":
-                                                selection = lutger;
-                                                break;
-                                        case "slot2":
-                                                selection = lutger;
-                                                break;
-                                        case "slot3":
-                                                selection = lutger;
-                                                break;
+                                    case "slot1":
+                                    case "slot2":
+                                    case "slot3":
+                                        selection = lutger; // Assign the same array for each slot
+                                        break;
                                 }
                                 const slotElement = document.getElementById(slotId);
                                 let content = "";
@@ -161,6 +157,11 @@
                                         </img>`;
                                 }
                                 slotElement.innerHTML = content;
+
+                                
+                                const slotContent = slotElement.innerHTML;
+                                console.log(`Content of ${slotId}:`, slotContent); // Log the content of the slot
+                                return slotContent;
                         }
 
                         function spin() {
