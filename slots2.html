@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html>
+        <head>
+                <title>Slot Machine</title>
+                <style>
+                        :root {
+                                background-color: #212121;
+                        }
+                        body {
+                                text-align: center;
+                                font-family: Arial, sans-serif;
+                        }
+                        .slot-container {
+                                display: flex;
+                                justify-content: flex-start;
+
+                                align-items: flex-start;
+                                border: 5px solid #333;
+                                width: 300px;
+                                height: 200px;
+                                overflow: hidden;
+                                margin: auto;
+                                border-radius: 8px;
+                                perspective: 1500;
+                        }
+                        .slot {
+                                transform: translateX(-50px) translateY(-50px);
+
+                                width: 100px;
+                                text-align: center;
+                                font-size: 24px;
+                                line-height: 100px;
+                                position: relative;
+                                transition: all ease-out 2s;
+                        }
+                        .spin {
+                                animation: spin 3.5s forwards;
+                        }
+                        .enlargen {
+                                animation: enlargen 0.1s forwards;
+                        }
+
+                        .blur {
+                                animation: blur 0.3s forwards;
+                        }
+                        .emoji {
+                                position: absolute;
+                                padding: 20px;
+                        }
+                        .win {
+                                animation: win 0.3s forwards,
+                                        rotate 1.5s infinite alternate ease-in-out 0.3s;
+                        }
+                        button {
+                                display: block;
+                                margin: 20px auto;
+                                padding: 1rem;
+                                background-color: rgb(0, 132, 255);
+                                border: none;
+                                border-radius: 8px;
+                                color: #fff;
+                                font-weight: bold;
+                                transition: all 0.1s;
+                        }
+                        button:hover {
+                                cursor: pointer;
+                                transform: scale(1.1);
+                                background-color: rgb(0, 86, 167);
+                        }
+
+                        @keyframes blur {
+                                from {
+                                }
+                                to {
+                                        filter: blur(8px);
+                                        -webkit-filter: blur(8px);
+                                }
+                        }
+                        @keyframes win {
+                                from {
+                                        transform: scale(1.3);
+                                }
+                                to {
+                                        transform: scale(4);
+                                }
+                        }
+                        @keyframes rotate {
+                                0% {
+                                        transform: scale(4) rotate(0deg);
+                                }
+                                100% {
+                                        transform: scale(4) rotate(2deg);
+                                }
+                        }
+                        @keyframes enlargen {
+                                from {
+                                }
+                                to {
+                                        transform: scale(1.3) rotate(1turn);
+                                }
+                        }
+
+                        @keyframes spin {
+                                from {
+                                }
+                                to {
+                                        transform: translateY(-2750px) translateX(-50px);
+                                }
+                        }
+                </style>
+        </head>
+        <body>
+                <div class="slot-container">
+                        <div id="slot1" class="slot"></div>
+                        <div id="slot2" class="slot"></div>
+                        <div id="slot3" class="slot"></div>
+                </div>
+
+                <button onclick="spin()">Open Capsule</button>
+                <script>
+                        const teams = [
+                                "https://img-cdn.hltv.org/teamlogo/-X8NoyWC_1gYqUHvZqcpkc.svg?ixlib=java-2.1.0&s=85bb9daa6f846fa097c5942f2565fdb8",
+                                "https://img-cdn.hltv.org/teamlogo/zFLwAELOD15BjJSDMMNBWQ.png?ixlib=java-2.1.0&w=50&s=affb583e6716d8ee904826992255cc4b",
+                                "https://img-cdn.hltv.org/teamlogo/yeXBldn9w8LZCgdElAenPs.png?ixlib=java-2.1.0&w=50&s=15eaba0b75250065d20162d2cb05e3e6",
+                                "https://img-cdn.hltv.org/teamlogo/RfR1zmFJ0eP08VmFb6UOu3.png?ixlib=java-2.1.0&w=50&s=051cbffad4d1c25468d83abee6f4fe23",
+                                "https://img-cdn.hltv.org/teamlogo/SMhzsxzbkIrgqCOOKGRXlW.svg?ixlib=java-2.1.0&s=e6a9ce0345c7d703e5eaac14307f69aa",
+                                "https://img-cdn.hltv.org/teamlogo/59EeJjjh_x-MUuUzupO48J.png?ixlib=java-2.1.0&w=50&s=1e7daabab5fabc1b07abaff3d8fb0566",
+                        ];
+                        const nations = [
+                                "https://cdn-icons-png.flaticon.com/128/197/197564.png",
+                                "https://cdn-icons-png.flaticon.com/128/197/197430.png",
+                                "https://cdn-icons-png.flaticon.com/128/197/197484.png",
+                                "https://cdn-icons-png.flaticon.com/128/197/197374.png",
+                                "https://cdn-icons-png.flaticon.com/128/197/197571.png",
+                        ];
+
+                        const rarities = [
+                                "https://media.discordapp.net/attachments/383671011544924161/1168678870698950708/gold.png?ex=6552a403&is=65402f03&hm=880a9be0eed337297f4ba519b40614091a685ed580b561d3dd366399d2531fc6&=",
+                                "https://media.discordapp.net/attachments/383671011544924161/1168679904871710780/blue.png?ex=6552a4fa&is=65402ffa&hm=616a26045c979c86858460bdc303d6ede985e6eb42b21d6a3399285a8ef95ecf&=",
+                                "https://media.discordapp.net/attachments/383671011544924161/1168679905190498424/lila.png?ex=6552a4fa&is=65402ffa&hm=cd64bf1088beb578ad9ebe3f2295d508828558970c88fe99630baed99193315c&=",
+                                "https://media.discordapp.net/attachments/383671011544924161/1168679905739931739/pink.png?ex=6552a4fa&is=65402ffa&hm=67e4a9674bf4199692dd9734add13dd2c382e5d3eb2935185b44bcc3ef95e6dd&=",
+                        ];
+                        const images = [
+                                "https://steamcommunity-a.akamaihd.net/economy/image/-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXQ9QVcJY8gulRNTV7ZVLb9hZycQFRzGgpSpK6_FABs2ufcdC994N2kk4XFz6WhNb6EzmpV7Zwoj-vEpNumjQLmqUFlNTz3J9OTcA45ZluErFm6lPCv28Gt6nJCgA/260fx260f",
+                                "https://steamcommunity-a.akamaihd.net/economy/image/-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXQ9QVcJY8gulRNTV7ZVLb9hZycQFRzGgxWura_LhVr7PTEeClW6c6JmIGZkPK6Y7nUwW8F6ZUh0r3Erd6hjQO3qEs4a2Hwd4bBdwY3M1nV_ge2wejs1Ij84sqzgrcn6w/260fx260f",
+                                "https://steamcommunity-a.akamaihd.net/economy/image/-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXQ9QVcJY8gulRNTV7ZVLb9hZycQFRzGgZFubG8FAthwfTNP2xBvoiykNfazqSiMOuFwj9X6pZ3iLmV89nx2FLk-0psMGvzIoHAJlQgIQaHmj_Durw/260fx260f",
+                                "https://steamcommunity-a.akamaihd.net/economy/image/-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXQ9QVcJY8gulRNTV7ZVLb9hZycQFRzGg5TtYWpKhVn1r3KcjwTtITgwdHYkqCiYL_Tw24Dscd13-3Cp96hjQbs_EY6YGzwJY_DbEZgNk8YpTKU/260fx260f",
+                                "https://steamcommunity-a.akamaihd.net/economy/image/-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXQ9QVcJY8gulRNTV7ZVLb9hZycQFRzGhZYpqCaLAhs18zEcC9F6ZLlwtaJxPGhYLiDlD1T7ZMk3bCRrd-hjgTg_hE5NminINOcIwY2ZF7V5BHgltLuyzyM/260fx260f",
+                        ];
+                        let spinning = false;
+
+                        function populateSlot(slotId) {
+                                let selection = [];
+                                console.log(slotId);
+                                switch (slotId) {
+                                        case "slot1":
+                                                selection = teams;
+                                                break;
+                                        case "slot2":
+                                                selection = nations;
+                                                break;
+                                        case "slot3":
+                                                selection = rarities;
+                                                break;
+                                }
+                                const slotElement = document.getElementById(slotId);
+                                let content = "";
+                                for (let i = 0; i < 30; i++) {
+                                        const src =
+                                                selection[Math.floor(Math.random() * selection.length)];
+                                        content += `<img width="60" height="60" class="emoji" style="top:${
+                                                i * 100
+                                        }px"
+                                        src=${src}>
+
+                                        </img>`;
+                                }
+                                slotElement.innerHTML = content;
+                        }
+
+                        function spin() {
+                                if (spinning) return;
+                                document.querySelectorAll(".slot").forEach((emoji, index) => {
+                                        emoji.classList.remove("spin");
+                                });
+                                spinning = true;
+                                populateSlot("slot1");
+                                populateSlot("slot2");
+                                populateSlot("slot3");
+
+                                document.querySelectorAll(".slot").forEach((emoji, index) => {
+                                        setTimeout(() => {
+                                                emoji.classList.add("spin");
+                                                setTimeout(() => {
+                                                        emoji.children[28].classList.add("enlargen");
+                                                }, 3600 + index * 100);
+                                        }, index * 100);
+                                });
+                                setTimeout(() => {
+                                        document
+                                                .querySelectorAll(".emoji")
+                                                .forEach((emoji, index) => {
+                                                        if (index !== 58) emoji.classList.add("blur");
+                                                        else {
+                                                                emoji.src =
+                                                                        images[
+                                                                                Math.floor(
+                                                                                        Math.random() * images.length
+                                                                                )
+                                                                        ];
+                                                                emoji.classList.add("win");
+                                                        }
+                                                });
+                                }, 4300);
+                                setTimeout(() => {
+                                        spinning = false;
+                                }, 4500);
+                        }
+
+                        // Initial population
+                        populateSlot("slot1");
+                        populateSlot("slot2");
+                        populateSlot("slot3");
+                </script>
+        </body>
+</html>
